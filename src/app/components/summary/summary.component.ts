@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { AvatarComponent } from '../avatar/avatar.component';
 import { IInfo } from '../../interface/IInfo';
 import { Info } from '../../enum/info';
+import { CustomBurgerService } from '../../service/custom-burger.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-summary',
@@ -12,7 +14,7 @@ import { Info } from '../../enum/info';
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.scss'
 })
-export class SummaryComponent {
+export class SummaryComponent implements OnInit{
 
   public kcal: Info = Info.kcal;
 
@@ -36,6 +38,25 @@ export class SummaryComponent {
       name: 'kcal'
     }
   ];
+
+  private _customBurgerService = inject(CustomBurgerService);
+  public price: number = 0;
+
+  ngOnInit(): void {
+      this._customBurgerService.ingredients
+        .pipe(map(ingredients => {
+          return ingredients.reduce((prev, curr) => prev + curr.price, 0);
+        }))
+        .subscribe({
+          next: value => {
+            this.price = value;
+            console.log('value -->',this.price);
+          },
+          error: error =>{
+            console.log('error -->', error);
+          }
+      })
+  }
 
   handleCheckoup(){
     console.log('checkup');

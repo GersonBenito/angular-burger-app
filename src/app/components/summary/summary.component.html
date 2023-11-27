@@ -3,7 +3,7 @@
         <div class="summary_title">Summary</div>
         <div class="summary_divider"></div>
         <div class="summary_action">
-            <div class="summary_action_price">$0.00</div>
+            <div class="summary_action_price">{{price | currency}}</div>
             <app-button label="Checkout" type="primary" [action]="handleCheckoup"/>
         </div>
         <div class="summary_text">

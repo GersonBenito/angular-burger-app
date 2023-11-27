@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IngredientComponent } from '../ingredient/ingredient.component';
-import * as ingredientsJson from '../../data/ingredients.json';
 import { IIngredient } from '../../interface/IIngredient';
+import { CustomBurgerService } from '../../service/custom-burger.service';
 
 @Component({
   selector: 'app-wrapper-ingredient',
@@ -14,12 +14,17 @@ import { IIngredient } from '../../interface/IIngredient';
 export class WrapperIngredientComponent implements OnInit {
   public ingredients: IIngredient[] = [];
 
+  private _customBurgerService = inject(CustomBurgerService);
+
   ngOnInit(): void {
-      this.getIngredientFromJson();
+    this._customBurgerService.ingredients.subscribe({
+      next: result =>{
+        this.ingredients = result;
+      },
+      error: error => {
+        console.log('error -->', error);
+      }
+    })
   }
-
-  getIngredientFromJson(){
-    this.ingredients = (ingredientsJson as any).default;
-  }
-
+  
 }

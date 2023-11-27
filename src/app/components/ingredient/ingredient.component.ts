@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IIngredient } from '../../interface/IIngredient';
 import { Info } from '../../enum/info';
+import { CustomBurgerService } from '../../service/custom-burger.service';
 
 @Component({
   selector: 'app-ingredient',
@@ -11,6 +12,9 @@ import { Info } from '../../enum/info';
   styleUrl: './ingredient.component.scss'
 })
 export class IngredientComponent {
+
+  private _customBurgerService = inject(CustomBurgerService);
+
   @Input() ingredient: IIngredient = {
     id: 0,
     image: 'cutlet',
@@ -24,10 +28,11 @@ export class IngredientComponent {
 
   public cucumber: string = Info.cucumber;
 
-  increment(){
-    this.ingredient = {
-      ...this.ingredient,
-      amount: this.ingredient.amount++
-    }
+  addNewIngredient(id: number | string | undefined){
+    this._customBurgerService.addIngredient(id);
+  }
+
+  removeIngredient(id: number | string | undefined){
+    this._customBurgerService.removeIngredient(id);
   }
 }

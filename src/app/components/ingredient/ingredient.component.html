@@ -6,8 +6,12 @@
     >
     <div class="ingredient_name">{{ingredient.name | titlecase}}</div>
     <div class="ingredient_actions">
-        <button>-</button>
+        <button 
+            [disabled]="ingredient.amount === 0" 
+            (click)="removeIngredient(ingredient.id)">
+            -
+        </button>
         <div class="counter">{{ingredient.amount}}</div>
-        <button (click)="increment()">+</button>
+        <button (click)="addNewIngredient(ingredient.id)">+</button>
     </div>
 </div>
