@@ -1,0 +1,22 @@
+@import '../../../styles.scss';
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    .options{
+        display: flex;
+        gap: 52px;
+        @include font-16-regular($primary-black);
+        .option{
+            cursor: pointer;
+            .active{
+                border-bottom: 2px solid;
+                border-bottom-color: $primary-primary;
+                margin-top: 8px;
+            }
+        }
+        .active-label{
+            @include font-16-semi($primary-black);
+        }
+    }
+}

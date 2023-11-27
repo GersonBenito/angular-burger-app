@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    span{
+        @include heading-desktop-H1($primary-black);
+    }
+}

@@ -1,0 +1,14 @@
+.custom-burger{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    position: relative;
+    img{
+        width: 435px;
+    }
+    .bun_bottom{
+        position: absolute;
+        width: 433px;
+    }
+}

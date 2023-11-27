@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div class="wrapper_summary">
+        <div class="summary_title">Summary</div>
+        <div class="summary_divider"></div>
+        <div class="summary_action">
+            <div class="summary_action_price">$0.00</div>
+            <app-button label="Checkout" type="primary" [action]="handleCheckoup"/>
+        </div>
+        <div class="summary_text">
+            Build a <span>$10</span> Burger and Get a Gift
+        </div>
+        <div class="summary_info">
+            @for (item of info; track $index) {
+                <div class="summary_info_text">
+                    <app-avatar width="32" height="32" [bgColor]="item.color">
+                        <img 
+                            src="assets/images/{{item.icon}}.png" 
+                            [width]="item.name === kcal ? 22 : 16" 
+                            [alt]="item.name"
+                        >
+                    </app-avatar>
+                    <span>{{item.count}}</span>
+                    <span>{{item.name}}</span>
+                </div>
+            }@empty {
+                <span class="summary_info_text">Sumary info is empty</span>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 99px;
+    font-weight: 700;
+    color: $primary-primary;
+    font-family: $font;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.wrapper-burger{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    img{
+        width: 535px;
+    }
+    .burger{
+        position: absolute;
+        width: 600px;
+        margin-left: 56px;
+    }
+
+    .content-button{
+        position: absolute;
+        z-index: 1;
+        bottom: 3rem;
+        left: -2rem;
+    }
+}

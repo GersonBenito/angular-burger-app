@@ -1,0 +1,19 @@
+@import '../../../styles.scss';
+
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    span{
+        @include font-16-semi($primary-black);
+    }
+    .contact_call{
+        display: flex;
+        gap: 8px;
+        background: $red-red-200;
+        padding: 4px 10px;
+        border-radius: 99px;
+        cursor: pointer;
+        @include font-16-semi($primary-danger);
+    }
+}

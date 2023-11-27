@@ -1,0 +1,9 @@
+<div class="wrapper_ingredient">
+    <div class="wrapper_ingredient_card">
+        @for (ingredient of ingredients; track ingredient.id) {
+            <app-ingredient [ingredient]="ingredient"/>
+        }@empty {
+            <span>Section ingredients is empty</span>
+        }
+    </div>
+</div>

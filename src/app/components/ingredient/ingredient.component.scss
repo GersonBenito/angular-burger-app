@@ -1,0 +1,40 @@
+@import '../../../styles.scss';
+
+.ingredient{
+    width: 100px;
+    padding: 24px 18px;
+    border-radius: 32px;
+    border: 1px solid $primary-black-squeeze;
+    background: $primary-white;
+    text-align: center;
+    img{
+        width: 100%;
+    }
+    .ingredient_name{
+        margin-top: 16px;
+        @include font-14-semi();
+    }
+    .ingredient_actions{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        align-items: center;
+        button{
+            border-radius: 99px;
+            background: $primary-titan-white;
+            border: none;
+            color: $primary-primary;
+            height: 32px;
+            width: 32px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .counter{
+            @include font-20-semi();
+        }
+    }
+}

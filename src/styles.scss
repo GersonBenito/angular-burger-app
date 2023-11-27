@@ -1,1 +1,185 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+// Primary
+$primary-primary: #5243C2;
+$primary-danger: #FF4D4F;
+$primary-black: #1F2939;
+$primary-muted: #949BA6;
+$primary-titan-white: #F5F5FF;
+$primary-black-squeeze: #F0F7FA;
+$primary-white: #FFF;
+
+// Red
+$red-red-500: #FF4D4F;
+$red-red-400: #FF9293;
+$red-red-300: #FFC8C8;
+$red-red-200: #FFEDED;
+
+// Indigo
+$indigo-indigo-600: #473AA6;
+$indigo-indigo-500: #5243C2;
+
+// Gray
+$gray-gray-200: #D4D4D4;
+$gray-gray-100: #F4F4F4;
+
+// Typography and mixin
+$font: 'Open Sans', sans-serif;
+
+@mixin heading-desktop-H1($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+@mixin heading-desktop-H2($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+@mixin heading-desktop-H3($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+@mixin heading-desktop-H4($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+@mixin heading-desktop-H5($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+@mixin heading-desktop-H6($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+} 
+
+@mixin font-36-extrabold($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+@mixin font-20-regular($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+@mixin font-20-semi($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+@mixin font-16-regular($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin font-16-semi($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+@mixin font-14-regular($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin font-14-semi($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+// Buttons
+.btn-hero{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    background-color: $indigo-indigo-600;
+    color: $primary-white;
+    font-family: $font;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 30px;
+    text-transform: uppercase;
+    border-radius: 99px;
+    padding: 0px;
+    align-items: center;
+    text-align: center;
+    transition: .2s;
+    cursor: pointer;
+    border: none;
+    &:hover{
+        width: 170px;
+        height: 170px;
+        transition: .2s;
+    }
+}
+
+.btn-primary{
+    @include font-16-semi($primary-titan-white);
+    border: none;
+    background-color: $primary-primary;
+    padding: 16px 52px;
+    border-radius: 99px;
+    cursor: pointer;
+}

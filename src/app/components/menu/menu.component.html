@@ -1,0 +1,21 @@
+<div class="menu">
+    <app-avatar width="60" height="60">
+        <img src="../../../favicon.ico" width="32" alt="angular">
+    </app-avatar>
+    <div class="options">
+        @for (route of menu; track $index) {
+            <div 
+                class="option" 
+                [routerLink]="route.link" 
+                routerLinkActive="active-label"
+                #rla="routerLinkActive"
+            >
+                {{route.label}}
+                <div [class]="rla.isActive ? ['active', 'animate__animated', route.animation, 'animate__faster'] : []"></div>
+            </div>
+        }@empty {
+            <span>Menu is empty</span>
+        }
+    </div>
+
+</div>

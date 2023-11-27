@@ -1,0 +1,14 @@
+@import '../../../styles.scss';
+
+.wrapper_ingredient{
+    margin: 16px 0px;
+    display: flex;
+    justify-content: center;
+    .wrapper_ingredient_card{
+        display: flex;
+        gap: 16px;
+        span{
+            @include heading-desktop-H4();
+        }
+    }
+}
