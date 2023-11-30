@@ -6,6 +6,9 @@ import { IInfo } from '../../interface/IInfo';
 import { Info } from '../../enum/info';
 import { CustomBurgerService } from '../../service/custom-burger.service';
 import { map } from 'rxjs';
+import { getProperty } from '../../helper/helper';
+import { Summary } from '../../interface/ISummary';
+import * as summaryJson from '../../data/summay.json';
 
 @Component({
   selector: 'app-summary',
@@ -18,47 +21,52 @@ export class SummaryComponent implements OnInit{
 
   public kcal: Info = Info.kcal;
 
-  public info: IInfo[] = [
-    {
-      icon: 'clock',
-      color: '#B956F5',
-      count: 0,
-      name: 'min'
-    },
-    {
-      icon: 'scale',
-      color: '#F58F56',
-      count: 0,
-      name: 'oz'
-    },
-    {
-      icon: 'fire',
-      color: '#FF4D4F',
-      count: 0,
-      name: 'kcal'
-    }
-  ];
+  public info: IInfo[] = [];
 
   private _customBurgerService = inject(CustomBurgerService);
-  public price: number = 0;
+  public summary: Summary = {
+    kcal: 0,
+    oz: 0,
+    price: 0,
+    time: 0
+  };
 
   ngOnInit(): void {
-      this._customBurgerService.ingredients
-        .pipe(map(ingredients => {
-          return ingredients.reduce((prev, curr) => prev + curr.price, 0);
-        }))
-        .subscribe({
-          next: value => {
-            this.price = value;
-            console.log('value -->',this.price);
-          },
-          error: error =>{
-            console.log('error -->', error);
-          }
-      })
+    this.getSummary();
+    this.handleSummary();
   }
 
   handleCheckoup(){
     console.log('checkup');
+  }
+
+  getSummary(){
+    this.info = (summaryJson as any).default;
+  }
+
+  handleSummary(){
+    this._customBurgerService.selectIngredient
+    .pipe(map(ingredients => {
+      return {
+        price: getProperty(ingredients, 'price'),
+        time: getProperty(ingredients, 'time'),
+        oz: getProperty(ingredients, 'ounce'),
+        kcal: getProperty(ingredients, 'calorie'),
+      }
+    }))
+    .subscribe({
+      next: result => {
+        this.summary = result;
+        this.info = this.info.map(element => {
+          return {
+            ...element,
+            count: element.name === Info.min ? this.summary.time : element.name === Info.oz ? this.summary.oz : this.summary.kcal
+          }
+        })
+      },
+      error: error => {
+        console.log('error -->', error);
+      }
+    });
   }
 }

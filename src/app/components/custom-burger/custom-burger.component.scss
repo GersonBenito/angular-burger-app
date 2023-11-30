@@ -1,4 +1,4 @@
-.custom-burger{
+.custom_burger{
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -10,5 +10,12 @@
     .bun_bottom{
         position: absolute;
         width: 433px;
+    }
+    // .custom_burger_ingredientes{
+    // }
+    .ingredient{
+        position: absolute;
+        width: 365px;
+        z-index: 1;
     }
 }

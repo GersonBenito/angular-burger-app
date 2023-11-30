@@ -1,4 +1,9 @@
-<div class="custom-burger">
+<div class="custom_burger">
     <img src="assets/images/bg-burger.png" alt="bg-burger">
+    <!-- <div class="custom_burger_ingredientes">
+    </div> -->
+    @for (ingredient of ingredients; track ingredient.uid) {
+        <img src="assets/images/{{ingredient.image}}.png" class="ingredient" [alt]="ingredient.name">
+    }
     <img src="assets/images/bun_bottom.png" class="bun_bottom" alt="bun bottom">
 </div>

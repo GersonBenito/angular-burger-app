@@ -1,0 +1,20 @@
+[
+    {
+      "icon": "clock",
+      "color": "#B956F5",
+      "count": 0,
+      "name": "min"
+    },
+    {
+      "icon": "scale",
+      "color": "#F58F56",
+      "count": 0,
+      "name": "oz"
+    },
+    {
+      "icon": "fire",
+      "color": "#FF4D4F",
+      "count": 0,
+      "name": "kcal"
+    }
+  ]

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IIngredient } from '../interface/IIngredient';
 import { BehaviorSubject } from 'rxjs';
 import * as ingredientsJson from '../data/ingredients.json';
+import { uuidv4 } from '../helper/helper';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ import * as ingredientsJson from '../data/ingredients.json';
 export class CustomBurgerService {
 
   private ingredientsBueger: IIngredient[] = [];
+  private selectIngredintsBurger: IIngredient[] = [];
   private _ingredients: BehaviorSubject<IIngredient[]> = new BehaviorSubject<IIngredient[]>([]);
+  private _selectIngredients: BehaviorSubject<IIngredient[]> = new BehaviorSubject<IIngredient[]>([]);
 
   constructor() { 
     this.ingredientsBueger = (ingredientsJson as any).default;
@@ -20,14 +23,20 @@ export class CustomBurgerService {
     return this._ingredients.asObservable();
   }
 
-  addIngredient(id: number | string | undefined){
-    this.ingredientsBueger.map((ingredient: IIngredient) => {
+  get selectIngredient(){
+    return this._selectIngredients.asObservable();
+  }
+
+  addIngredient(ingredient: IIngredient){
+    this.ingredientsBueger.map((element: IIngredient) => {
       return {
-        ...ingredient,
-        amount: (ingredient.id === id) ? ingredient.amount++ : ingredient.amount
+        ...element,
+        amount: (element.id === ingredient.id) ? element.amount++ : element.amount
       }
     })
     this._ingredients.next(this.ingredientsBueger);
+    this.selectIngredintsBurger.push({...ingredient,  uid: uuidv4()});
+    this._selectIngredients.next(this.selectIngredintsBurger);
   }
 
   removeIngredient(id: number | string | undefined){
@@ -38,5 +47,8 @@ export class CustomBurgerService {
       }
     })
     this._ingredients.next(this.ingredientsBueger);
+    // this.selectIngredintsBurger = this.selectIngredintsBurger.filter(item => item.id !== id);
+    // console.log(this.selectIngredintsBurger);
+    
   }
 }

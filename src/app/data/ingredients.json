@@ -1,6 +1,7 @@
 [
     {
         "id": 0,
+        "uid": "",
         "image": "cutlet",
         "name": "cutlet",
         "amount": 0,
@@ -11,6 +12,7 @@
     },
     {
         "id": 1,
+        "uid": "",
         "image": "mayo",
         "name": "mayo",
         "amount": 0,
@@ -21,6 +23,7 @@
     },
     {
         "id": 2,
+        "uid": "",
         "image": "onion",
         "name": "onion",
         "amount": 0,
@@ -31,6 +34,7 @@
     },
     {
         "id": 3,
+        "uid": "",
         "image": "tomato",
         "name": "tomato",
         "amount": 0,
@@ -41,6 +45,7 @@
     },
     {
         "id": 4,
+        "uid": "",
         "image": "cucumber",
         "name": "cucumber",
         "amount": 0,
@@ -51,6 +56,7 @@
     },
     {
         "id": 5,
+        "uid": "",
         "image": "cheese",
         "name": "cheese",
         "amount": 0,
@@ -61,6 +67,7 @@
     },
     {
         "id": 6,
+        "uid": "",
         "image": "salad",
         "name": "salad",
         "amount": 0,
@@ -71,6 +78,7 @@
     },
     {
         "id": 7,
+        "uid": "",
         "image": "bun_middle",
         "name": "bun",
         "amount": 0,

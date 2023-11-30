@@ -17,6 +17,7 @@ export class IngredientComponent {
 
   @Input() ingredient: IIngredient = {
     id: 0,
+    uid: 0,
     image: 'cutlet',
     name: 'cutlet',
     amount: 0,
@@ -28,8 +29,8 @@ export class IngredientComponent {
 
   public cucumber: string = Info.cucumber;
 
-  addNewIngredient(id: number | string | undefined){
-    this._customBurgerService.addIngredient(id);
+  addNewIngredient(ingredient: IIngredient){
+    this._customBurgerService.addIngredient(ingredient);
   }
 
   removeIngredient(id: number | string | undefined){

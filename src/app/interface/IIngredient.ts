@@ -1,5 +1,6 @@
 export interface IIngredient{
     id?: number | string;
+    uid?: number | string;
     image: string;
     name: string;
     amount: number;
