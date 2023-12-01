@@ -4,4 +4,7 @@ export enum Info {
     kcal = 'kcal',
     cucumber = 'cucumber',
     price = 'price', 
+    mayo = 'mayo',
+    cheese = 'cheese',
+    salad = 'salad'
 }

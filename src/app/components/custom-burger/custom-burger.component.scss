@@ -11,11 +11,15 @@
         position: absolute;
         width: 433px;
     }
+    .bun_top{
+        position: absolute;
+        width: 355px;
+    }
     // .custom_burger_ingredientes{
     // }
     .ingredient{
         position: absolute;
         width: 365px;
-        z-index: 1;
+        // z-index: 1;
     }
 }

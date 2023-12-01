@@ -13,6 +13,7 @@ export class CustomBurgerService {
   private selectIngredintsBurger: IIngredient[] = [];
   private _ingredients: BehaviorSubject<IIngredient[]> = new BehaviorSubject<IIngredient[]>([]);
   private _selectIngredients: BehaviorSubject<IIngredient[]> = new BehaviorSubject<IIngredient[]>([]);
+  private uidIngredients: string[] = [];
 
   constructor() { 
     this.ingredientsBueger = (ingredientsJson as any).default;
@@ -28,6 +29,7 @@ export class CustomBurgerService {
   }
 
   addIngredient(ingredient: IIngredient){
+    const uid: string = uuidv4();
     this.ingredientsBueger.map((element: IIngredient) => {
       return {
         ...element,
@@ -35,8 +37,9 @@ export class CustomBurgerService {
       }
     })
     this._ingredients.next(this.ingredientsBueger);
-    this.selectIngredintsBurger.push({...ingredient,  uid: uuidv4()});
+    this.selectIngredintsBurger.push({...ingredient, uid: uid});
     this._selectIngredients.next(this.selectIngredintsBurger);
+    this.uidIngredients.push(uid);
   }
 
   removeIngredient(id: number | string | undefined){
@@ -47,8 +50,20 @@ export class CustomBurgerService {
       }
     })
     this._ingredients.next(this.ingredientsBueger);
-    // this.selectIngredintsBurger = this.selectIngredintsBurger.filter(item => item.id !== id);
+
+    // let ingredient: IIngredient[] = [];
+    // this.uidIngredients.forEach(element => {
+    //   // console.log('element -->', element);
+    //   this.selectIngredintsBurger.filter(item => {
+    //     console.log(element === item.uid);
+    //   });
+    // });
+
+    // console.log(ingredient);
+    
+    this.selectIngredintsBurger.pop();
     // console.log(this.selectIngredintsBurger);
     
+    this._selectIngredients.next(this.selectIngredintsBurger);
   }
 }

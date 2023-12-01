@@ -1,9 +1,26 @@
 <div class="custom_burger">
     <img src="assets/images/bg-burger.png" alt="bg-burger">
-    <!-- <div class="custom_burger_ingredientes">
-    </div> -->
-    @for (ingredient of ingredients; track ingredient.uid) {
-        <img src="assets/images/{{ingredient.image}}.png" class="ingredient" [alt]="ingredient.name">
+    @if (ingredients.length > 0) {
+        <img 
+            src="assets/images/bun_top.png"
+            class="bun_top" 
+            [ngStyle]="{
+                'z-index': 10,
+                'bottom': customStyleBunTop(ingredients.length)
+            }"
+            alt="bun_top"
+         >
+    }
+
+    @for (ingredient of ingredients; track ingredient.uid;) {
+        <img src="assets/images/{{ingredient.image}}.png" 
+            [ngStyle]="{
+                'z-index': $index + 1,
+                'bottom': customStyle(ingredient.name, $index)
+            }"
+            class="ingredient" 
+            [alt]="ingredient.name"
+        >
     }
     <img src="assets/images/bun_bottom.png" class="bun_bottom" alt="bun bottom">
 </div>

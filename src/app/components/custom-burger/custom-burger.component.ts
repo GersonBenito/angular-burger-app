@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomBurgerService } from '../../service/custom-burger.service';
 import { IIngredient } from '../../interface/IIngredient';
+import { Info } from '../../enum/info';
 
 @Component({
   selector: 'app-custom-burger',
@@ -22,7 +23,6 @@ export class CustomBurgerComponent implements OnInit{
   getSelectIngredients(){
     this._customBurgerService.selectIngredient.subscribe({
       next: result => {
-        console.log(result);
         this.ingredients = result;
       },
       error: error => {
@@ -30,4 +30,19 @@ export class CustomBurgerComponent implements OnInit{
       }
     })
   }
+
+  customStyle(name: string, index: number): string{
+    return name === Info.mayo ? 
+          `${((index + 1) * 40) - 30}px`
+          : name === Info.cheese || name === Info.salad ? 
+          `${((index + 1) * 40) - 60}px` 
+          :`${(index + 1) * 40}px`;
+    // return `${(index + 1) * 40}px`;
+  }
+
+  customStyleBunTop(index: number): string{
+    const bottom = ((index + 1) * 40) + 40;
+    return `${bottom}px`;
+  }
+
 }
