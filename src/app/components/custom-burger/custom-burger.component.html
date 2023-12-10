@@ -5,8 +5,8 @@
             src="assets/images/bun_top.png"
             class="bun_top" 
             [ngStyle]="{
-                'z-index': 10,
-                'bottom': customStyleBunTop(ingredients.length)
+                'z-index': ingredients.length + 1,
+                'bottom': customStyleBunTop(ingredients.length) + 'px'
             }"
             alt="bun_top"
          >
@@ -16,9 +16,10 @@
         <img src="assets/images/{{ingredient.image}}.png" 
             [ngStyle]="{
                 'z-index': $index + 1,
-                'bottom': customStyle(ingredient.name, $index)
+                'bottom': customStyle(ingredient.name, $index, ingredient.amount) + 'px',
+                'width': '365px',
             }"
-            class="ingredient" 
+            [class]="['ingredient']" 
             [alt]="ingredient.name"
         >
     }

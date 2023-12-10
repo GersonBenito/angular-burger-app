@@ -15,6 +15,8 @@ export class CustomBurgerComponent implements OnInit{
 
   private _customBurgerService = inject(CustomBurgerService);
   public ingredients: IIngredient[] = [];
+  public top: number = 0;
+  private count: number = 0;
 
   ngOnInit(): void {
       this.getSelectIngredients();
@@ -31,18 +33,22 @@ export class CustomBurgerComponent implements OnInit{
     })
   }
 
-  customStyle(name: string, index: number): string{
-    return name === Info.mayo ? 
-          `${((index + 1) * 40) - 30}px`
-          : name === Info.cheese || name === Info.salad ? 
-          `${((index + 1) * 40) - 60}px` 
-          :`${(index + 1) * 40}px`;
-    // return `${(index + 1) * 40}px`;
+  customStyle(name: string, index: number, amount: number): number{
+    return (index + 1) * 55;
   }
 
-  customStyleBunTop(index: number): string{
-    const bottom = ((index + 1) * 40) + 40;
-    return `${bottom}px`;
+  customStyleBunTop(length: number){
+    return ((length + 1) * 55)
+  }
+
+  customWidth(name: string): number{
+    // const width = (name === Info.onion || name === Info.tomato || name === Info.cucumber) ? 200 : 365;
+    return (name === Info.onion || name === Info.tomato || name === Info.cucumber) ? 200 : 365;
+  }
+
+  setClass(name: string, amount: number): string{
+    let customClass = (name === Info.onion && amount === 1) ? 'left' : (name === Info.onion && amount === 3) ? 'right': ''; 
+    return customClass;
   }
 
 }

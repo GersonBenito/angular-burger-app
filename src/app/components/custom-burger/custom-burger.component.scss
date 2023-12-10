@@ -19,7 +19,14 @@
     // }
     .ingredient{
         position: absolute;
-        width: 365px;
+        // width: 365px;
         // z-index: 1;
+    }
+
+    .left{
+        left: 2rem;
+    }
+    .right{
+        right: 2rem;
     }
 }

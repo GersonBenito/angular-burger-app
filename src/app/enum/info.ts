@@ -6,5 +6,7 @@ export enum Info {
     price = 'price', 
     mayo = 'mayo',
     cheese = 'cheese',
-    salad = 'salad'
+    salad = 'salad',
+    onion = 'onion',
+    tomato = 'tomato'
 }

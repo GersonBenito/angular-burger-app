@@ -5,7 +5,7 @@
         "image": "cutlet",
         "name": "cutlet",
         "amount": 0,
-        "price": 0.10,
+        "price": 1.50,
         "time": 5,
         "ounce": 1.2,
         "calorie": 2.1
@@ -16,7 +16,7 @@
         "image": "mayo",
         "name": "mayo",
         "amount": 0,
-        "price": 0.05,
+        "price": 1.00,
         "time": 2,
         "ounce": 1.2,
         "calorie": 2.1
@@ -27,7 +27,7 @@
         "image": "onion",
         "name": "onion",
         "amount": 0,
-        "price": 0.15,
+        "price": 0.25,
         "time": 3,
         "ounce": 1.2,
         "calorie": 2.1
@@ -38,7 +38,7 @@
         "image": "tomato",
         "name": "tomato",
         "amount": 0,
-        "price": 0.12,
+        "price": 0.50,
         "time": 2,
         "ounce": 1.2,
         "calorie": 2.1
@@ -49,7 +49,7 @@
         "image": "cucumber",
         "name": "cucumber",
         "amount": 0,
-        "price": 0.05,
+        "price": 0.50,
         "time": 2,
         "ounce": 1.2,
         "calorie": 2.1
@@ -71,7 +71,7 @@
         "image": "salad",
         "name": "salad",
         "amount": 0,
-        "price": 0.05,
+        "price": 0.75,
         "time": 3,
         "ounce": 1.2,
         "calorie": 2.1
@@ -82,7 +82,7 @@
         "image": "bun_middle",
         "name": "bun",
         "amount": 0,
-        "price": 0.10,
+        "price": 0.25,
         "time": 2,
         "ounce": 1.2,
         "calorie": 2.1

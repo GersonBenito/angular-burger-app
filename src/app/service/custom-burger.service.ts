@@ -43,6 +43,7 @@ export class CustomBurgerService {
   }
 
   removeIngredient(id: number | string | undefined){
+    
     this.ingredientsBueger.map((ingredient: IIngredient) => {
       return {
         ...ingredient,
@@ -51,19 +52,10 @@ export class CustomBurgerService {
     })
     this._ingredients.next(this.ingredientsBueger);
 
-    // let ingredient: IIngredient[] = [];
-    // this.uidIngredients.forEach(element => {
-    //   // console.log('element -->', element);
-    //   this.selectIngredintsBurger.filter(item => {
-    //     console.log(element === item.uid);
-    //   });
-    // });
+    const listIngredientsDelete: IIngredient[] = this.selectIngredintsBurger.filter(item => item.id === id); 
+    const deleteIngredient = listIngredientsDelete.pop();
 
-    // console.log(ingredient);
-    
-    this.selectIngredintsBurger.pop();
-    // console.log(this.selectIngredintsBurger);
-    
+    this.selectIngredintsBurger = this.selectIngredintsBurger.filter(item => item.uid !== deleteIngredient?.uid);
     this._selectIngredients.next(this.selectIngredintsBurger);
   }
 }
