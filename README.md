@@ -8,5 +8,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![burger-discover](src/assets/readme/readme-burger-app.png)
 ![burger-process](src/assets/readme/readme-burger-app-process.png)
+![burger-ingredients](src/assets/readme/readme-burger-app-ingredients.png)
 
 # App in progress
