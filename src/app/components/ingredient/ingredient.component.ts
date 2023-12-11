@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { IIngredient } from '../../interface/IIngredient';
 import { Info } from '../../enum/info';
 import { CustomBurgerService } from '../../service/custom-burger.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-ingredient',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './ingredient.component.html',
   styleUrl: './ingredient.component.scss'
 })

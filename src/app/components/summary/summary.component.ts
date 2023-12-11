@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { AvatarComponent } from '../avatar/avatar.component';
@@ -9,11 +9,13 @@ import { map } from 'rxjs';
 import { getProperty } from '../../helper/helper';
 import { Summary } from '../../interface/ISummary';
 import * as summaryJson from '../../data/summay.json';
+import { PopUpComponent } from '../pop-up/pop-up.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-summary',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, AvatarComponent],
+  imports: [CommonModule, ButtonComponent, AvatarComponent, MatDialogModule],
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.scss'
 })
@@ -31,13 +33,18 @@ export class SummaryComponent implements OnInit{
     time: 0
   };
 
+  private dialog = inject(MatDialog)
+
   ngOnInit(): void {
     this.getSummary();
     this.handleSummary();
   }
 
   handleCheckoup(){
-    console.log('checkup');
+   this.dialog.open(PopUpComponent, {
+      width: '50%',
+      disableClose: true
+   });
   }
 
   getSummary(){

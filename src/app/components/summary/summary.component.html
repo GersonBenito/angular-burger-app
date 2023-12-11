@@ -4,7 +4,7 @@
         <div class="summary_divider"></div>
         <div class="summary_action">
             <div class="summary_action_price">{{summary.price| currency}}</div>
-            <app-button label="Checkout" type="primary" [action]="handleCheckoup"/>
+            <button class="btn-primary" (click)="handleCheckoup()">Checkout</button>
         </div>
         <div class="summary_text">
             Build a <span>$10</span> Burger and Get a Gift

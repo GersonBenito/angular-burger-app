@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "icon": "sentiment_satisfied",
+        "label": "Your Name",
+        "value": "Gerson Benito",
+        "data": []
+    },
+    {
+        "id": 2,
+        "icon": "phone",
+        "label": "Phone Number",
+        "value": "(503) 7994-1343",
+        "data": []
+    },
+    {
+        "id": 3,
+        "icon": "turn_sharp_left",
+        "label": "Shipping Address",
+        "value": "1038 Cinder Berry Turnabout",
+        "data": []
+    },
+    {
+        "id": 4,
+        "icon": "",
+        "label": "Time to Delivery",
+        "value": "3:00 PM",
+        "data": [
+            "3:00 PM",
+            "4:00 PM",
+            "5:00 PM"
+        ]
+    }
+]

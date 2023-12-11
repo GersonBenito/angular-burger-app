@@ -8,9 +8,11 @@
         <button 
             [disabled]="ingredient.amount === 0" 
             (click)="removeIngredient(ingredient.id)">
-            -
+            <mat-icon>remove</mat-icon>
         </button>
         <div class="counter">{{ingredient.amount}}</div>
-        <button (click)="addNewIngredient(ingredient)">+</button>
+        <button (click)="addNewIngredient(ingredient)">
+            <mat-icon>add</mat-icon>
+        </button>
     </div>
 </div>

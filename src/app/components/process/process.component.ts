@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TitlePageComponent } from '../title-page/title-page.component';
 import { CustomBurgerComponent } from '../custom-burger/custom-burger.component';
 import { SummaryComponent } from '../summary/summary.component';
-import { IngredientComponent } from '../ingredient/ingredient.component';
 import { WrapperIngredientComponent } from '../wrapper-ingredient/wrapper-ingredient.component';
 
 @Component({

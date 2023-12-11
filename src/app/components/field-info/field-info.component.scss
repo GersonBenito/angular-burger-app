@@ -1,0 +1,57 @@
+@import '../../../styles.scss';
+
+.field-info{
+    border-radius: 16px;
+    border: 1px solid $primary-titan-white;
+    background: $primary-white;
+    padding: 8px 16px;
+    .field-info-content{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        .icon{
+            display: flex
+        }
+        .values{
+            .label{
+                @include font-12-regular($primary-muted);
+            }
+            .value{
+                @include font-14-semi();
+            }
+        }
+    }
+    .data-icon{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .data-options{
+        @include font-14-semi($primary-primary);
+        position: absolute;
+        bottom: -6.3rem;
+        background: $primary-titan-white;
+        width: 90%;
+        left: 0;
+        padding: 8px 16px;
+        border-radius: 16px;
+        .option{
+            margin-bottom: 8px;
+            cursor: pointer;
+            &:hover{
+                background: $red-red-200;
+            }
+        }
+        .selected{
+            background: rgba(82, 67, 194, 0.9);
+            color: $primary-white;
+        }
+    }
+}
+
+.between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}

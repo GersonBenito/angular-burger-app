@@ -148,6 +148,24 @@ $font: 'Open Sans', sans-serif;
     line-height: 20px;
 }
 
+@mixin font-12-regular($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@mixin font-12-semi($color: $primary-black){
+    color: $color;
+    font-family: $font;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 // Buttons
 .btn-hero{
     display: flex;
@@ -182,4 +200,19 @@ $font: 'Open Sans', sans-serif;
     padding: 16px 52px;
     border-radius: 99px;
     cursor: pointer;
+}
+
+.btn-secondary{
+    @include font-16-semi($primary-primary);
+    border: none;
+    background-color: $primary-titan-white;
+    padding: 16px 52px;
+    border-radius: 99px;
+    cursor: pointer;
+}
+
+// Angular material
+::ng-deep .cdk-overlay-dark-backdrop{
+    background: rgba(82, 67, 194, 0.90);
+    backdrop-filter: blur(5px);
 }

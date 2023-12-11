@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="header-pop-up">
+        <div class="label-header">
+            <img src="/assets/svg/circle.svg" alt="circle">
+            Checkout
+        </div>
+        <div class="close">
+            <img src="/assets/svg/close-pop-up.svg" (click)="closePopUp()" alt="close">
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="info">
+        @for (field of fields; track field.id) {
+            <app-field-info [icon]="field.icon" [label]="field.label" [value]="field.value" [data]="field.data"/>  
+        }@empty {
+            <span>Field is empty</span>
+        }
+    </div>
+    <div class="divider"></div>
+    <div class="buttons">
+        <button class="btn-secondary" (click)="closePopUp()">Cancel</button>
+        <app-button label="Checkout" type="primary" />
+    </div>
+</div>

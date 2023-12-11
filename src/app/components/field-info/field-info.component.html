@@ -1,0 +1,36 @@
+<div [class]="['field-info', data.length > 1 ? 'between' : '']">
+    <div class="field-info-content">
+        @if (icon) {
+            <div class="icon">
+                <mat-icon [style.color]="color">{{icon}}</mat-icon>
+            </div>
+        }
+        <div class="values">
+            <div class="label">{{label}}</div>
+            <div class="value">{{value}}</div>
+        </div>
+    </div>
+    @if (data.length > 0) {
+        @if (show) {
+            <div class="data-icon">
+                <mat-icon (click)="showListOption()">expand_less</mat-icon>
+            </div>
+            <div class="data-options">
+                @for (option of data; track $index) {
+                    <div 
+                        [class]="['option', (value === option) ? 'selected' : '']" 
+                        (click)="getOption(option)"
+                    >
+                    {{option}}
+                </div>
+                }@empty {
+                    <span>Options is empty</span>
+                }
+            </div>
+        }@else {
+            <div class="data-icon">
+                <mat-icon (click)="showListOption()">expand_more</mat-icon>
+            </div>
+        }
+    }
+</div>

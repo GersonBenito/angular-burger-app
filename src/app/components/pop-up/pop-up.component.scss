@@ -1,0 +1,39 @@
+@import '../../../styles.scss';
+
+.wrapper{
+    .header-pop-up{
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        .label-header{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            @include heading-desktop-H5();
+        }
+        .close{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    .divider{
+        height: 1px;
+        background-color: $primary-titan-white
+    }
+    .info{
+        padding: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+        span{
+            @include heading-desktop-H5();
+        }
+    }
+    .buttons{
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        justify-content: flex-end;
+    }
+}
