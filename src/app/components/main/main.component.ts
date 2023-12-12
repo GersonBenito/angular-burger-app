@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { TitlePageComponent } from '../title-page/title-page.component';
 import { BurgerComponent } from '../burger/burger.component';
-import { ButtonComponent } from '../button/button.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main',
@@ -13,5 +13,7 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-
+  constructor(private title: Title){
+    this.title.setTitle('Burger - Discover')
+  }
 }
